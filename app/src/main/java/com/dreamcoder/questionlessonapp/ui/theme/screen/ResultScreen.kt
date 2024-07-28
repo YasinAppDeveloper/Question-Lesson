@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -21,11 +20,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.dreamcoder.questionlessonapp.data.QuestionModel
+import com.dreamcoder.questionlessonapp.navigation.Routes
 import com.dreamcoder.questionlessonapp.ui.theme.components.CustomBorderText
 import com.dreamcoder.questionlessonapp.ui.theme.components.CustomSpacer
 import com.dreamcoder.questionlessonapp.ui.theme.components.CustomText
 import com.dreamcoder.questionlessonapp.ui.theme.components.ResultScreenSecondToolbar
-import com.dreamcoder.questionlessonapp.ui.theme.components.ResultScreenTopToolbar
+import com.dreamcoder.questionlessonapp.ui.theme.components.ResultScreenToolbar
 
 @Composable
 fun ResultScreen(navController: NavController) {
@@ -40,7 +40,12 @@ fun ResultScreen(navController: NavController) {
     ) {
         LazyColumn {
             item {
-                ResultScreenTopToolbar()
+                ResultScreenToolbar {
+                    navController.navigate(Routes.QuestionScreen.route){
+                        popUpTo(navController.graph.id)
+                        launchSingleTop = true
+                    }
+                }
                 CustomSpacer(dp = 1.dp, modifier = Modifier.background(color = Color.Black))
                 ResultScreenSecondToolbar()
                 CustomSpacer(dp = 1.dp, modifier = Modifier.background(color = Color.Black))

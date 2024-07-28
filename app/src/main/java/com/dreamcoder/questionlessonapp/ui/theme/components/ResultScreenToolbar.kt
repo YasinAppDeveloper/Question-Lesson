@@ -17,13 +17,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dreamcoder.questionlessonapp.R
 
 @Composable
-fun ResultScreenTopToolbar() {
+fun ResultScreenToolbar(onBackClick: () -> Unit) {
     Row(
         modifier = Modifier
             .height(56.dp)
@@ -35,7 +34,7 @@ fun ResultScreenTopToolbar() {
         Row {
             CustomIcon(
                 icon = R.drawable.back_arrow,
-                modifier = Modifier
+                modifier = Modifier.clickable { onBackClick() }
                     .padding(start = 10.dp, top = 2.dp)
                     .size(20.dp)
             )

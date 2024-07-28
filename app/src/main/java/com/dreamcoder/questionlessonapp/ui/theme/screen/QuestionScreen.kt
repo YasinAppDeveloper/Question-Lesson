@@ -42,6 +42,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.dreamcoder.questionlessonapp.data.QuestionModel
+import com.dreamcoder.questionlessonapp.navigation.Routes
 import com.dreamcoder.questionlessonapp.ui.theme.components.CustomSpacer
 import com.dreamcoder.questionlessonapp.ui.theme.components.CustomText
 import com.dreamcoder.questionlessonapp.ui.theme.components.QuizScreenSecondToolbar
@@ -52,6 +53,7 @@ import com.dreamcoder.questionlessonapp.ui.theme.components.QuizScreenTopToolbar
 fun QuestionScreen(
     viewModel: QuestionViewModel, navController: NavController
 ) {
+
     val questions by viewModel.questions.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
     val context = LocalContext.current
@@ -64,9 +66,14 @@ fun QuestionScreen(
             .background(color = Color.White)
     ) {
         if (isLoading) {
-            Text(text = "Loading...", fontSize = 18.sp, modifier = Modifier.align(Alignment.Center))
+            Text(
+                text = "Loading...",
+                fontSize = 18.sp,
+                modifier = Modifier.align(Alignment.Center)
+            )
         } else {
             LazyColumn {
+
                 item {
                     QuizScreenTopToolbar()
                     CustomSpacer(dp = 1.dp, modifier = Modifier.background(color = Color.Black))
@@ -96,7 +103,7 @@ fun QuestionScreen(
                             "questions",
                             questions
                         )
-                        navController.navigate("result")
+                        navController.navigate(Routes.ResultScreen.route)
                     } else {
                         Toast.makeText(context, "Fill the all option", Toast.LENGTH_SHORT).show()
                     }
