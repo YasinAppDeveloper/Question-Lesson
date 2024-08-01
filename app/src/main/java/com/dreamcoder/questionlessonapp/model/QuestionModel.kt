@@ -1,4 +1,4 @@
-package com.dreamcoder.questionlessonapp.data
+package com.dreamcoder.questionlessonapp.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

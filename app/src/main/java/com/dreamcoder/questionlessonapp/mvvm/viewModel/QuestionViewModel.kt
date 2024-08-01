@@ -3,7 +3,7 @@ package com.dreamcoder.questionlessonapp.mvvm.viewModel
 import com.dreamcoder.questionlessonapp.mvvm.Repository.QuestionRepository
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.dreamcoder.questionlessonapp.data.QuestionModel
+import com.dreamcoder.questionlessonapp.model.QuestionModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

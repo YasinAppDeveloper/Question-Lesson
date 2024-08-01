@@ -39,7 +39,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.dreamcoder.questionlessonapp.data.QuestionModel
+import com.dreamcoder.questionlessonapp.model.QuestionModel
 import com.dreamcoder.questionlessonapp.util.Routes
 import com.dreamcoder.questionlessonapp.components.CustomSpacer
 import com.dreamcoder.questionlessonapp.components.CustomText
