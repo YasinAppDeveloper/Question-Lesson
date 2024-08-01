@@ -1,12 +1,13 @@
 package com.dreamcoder.questionlessonapp.navigation
 
-import QuestionViewModel
+import com.dreamcoder.questionlessonapp.mvvm.viewModel.QuestionViewModel
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.dreamcoder.questionlessonapp.ui.theme.screen.QuestionScreen
-import com.dreamcoder.questionlessonapp.ui.theme.screen.ResultScreen
+import com.dreamcoder.questionlessonapp.screen.QuestionScreen
+import com.dreamcoder.questionlessonapp.screen.ResultScreen
+import com.dreamcoder.questionlessonapp.util.Routes
 
 @Composable
 fun Navigation(quizViewModel: QuestionViewModel) {

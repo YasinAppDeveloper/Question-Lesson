@@ -1,12 +1,10 @@
-@file:Suppress("UnusedImport", "RedundantSuppression")
+package com.dreamcoder.questionlessonapp.mvvm.Repository
 
 import com.dreamcoder.questionlessonapp.data.QuestionModel
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.coroutines.tasks.await
-import javax.inject.Inject
 
 
-class QuestionRepository @Inject constructor(
+class QuestionRepository (
     private val firestore: FirebaseFirestore
 ) {
     fun getAllQuestions(onComplete: (List<QuestionModel>) -> Unit) {

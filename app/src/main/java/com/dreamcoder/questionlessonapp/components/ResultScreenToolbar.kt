@@ -1,6 +1,6 @@
 @file:Suppress("UnusedImport")
 
-package com.dreamcoder.questionlessonapp.ui.theme.components
+package com.dreamcoder.questionlessonapp.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

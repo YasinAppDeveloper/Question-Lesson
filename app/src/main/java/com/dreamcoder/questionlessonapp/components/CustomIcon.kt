@@ -1,4 +1,4 @@
-package com.dreamcoder.questionlessonapp.ui.theme.components
+package com.dreamcoder.questionlessonapp.components
 
 import androidx.annotation.DrawableRes
 import androidx.compose.material3.Icon

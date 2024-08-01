@@ -1,4 +1,4 @@
-package com.dreamcoder.questionlessonapp.ui.theme.screen
+package com.dreamcoder.questionlessonapp.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -20,12 +20,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.dreamcoder.questionlessonapp.data.QuestionModel
-import com.dreamcoder.questionlessonapp.navigation.Routes
-import com.dreamcoder.questionlessonapp.ui.theme.components.CustomBorderText
-import com.dreamcoder.questionlessonapp.ui.theme.components.CustomSpacer
-import com.dreamcoder.questionlessonapp.ui.theme.components.CustomText
-import com.dreamcoder.questionlessonapp.ui.theme.components.ResultScreenSecondToolbar
-import com.dreamcoder.questionlessonapp.ui.theme.components.ResultScreenToolbar
+import com.dreamcoder.questionlessonapp.util.Routes
+import com.dreamcoder.questionlessonapp.components.CustomBorderText
+import com.dreamcoder.questionlessonapp.components.CustomSpacer
+import com.dreamcoder.questionlessonapp.components.CustomText
+import com.dreamcoder.questionlessonapp.components.ResultScreenSecondToolbar
+import com.dreamcoder.questionlessonapp.components.ResultScreenToolbar
 
 @Composable
 fun ResultScreen(navController: NavController) {
@@ -58,7 +58,6 @@ fun ResultScreen(navController: NavController) {
         }
     }
 }
-
 
 @Composable
 fun ResultItem(question: QuestionModel) {
@@ -97,6 +96,5 @@ fun ResultItem(question: QuestionModel) {
                     .height(40.dp)
             )
         }
-
     }
 }

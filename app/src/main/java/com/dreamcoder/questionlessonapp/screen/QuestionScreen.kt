@@ -1,8 +1,8 @@
 @file:Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER", "UnusedImport")
 
-package com.dreamcoder.questionlessonapp.ui.theme.screen
+package com.dreamcoder.questionlessonapp.screen
 
-import QuestionViewModel
+import com.dreamcoder.questionlessonapp.mvvm.viewModel.QuestionViewModel
 import android.annotation.SuppressLint
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -14,13 +14,11 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
@@ -42,11 +40,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.dreamcoder.questionlessonapp.data.QuestionModel
-import com.dreamcoder.questionlessonapp.navigation.Routes
-import com.dreamcoder.questionlessonapp.ui.theme.components.CustomSpacer
-import com.dreamcoder.questionlessonapp.ui.theme.components.CustomText
-import com.dreamcoder.questionlessonapp.ui.theme.components.QuizScreenSecondToolbar
-import com.dreamcoder.questionlessonapp.ui.theme.components.QuizScreenTopToolbar
+import com.dreamcoder.questionlessonapp.util.Routes
+import com.dreamcoder.questionlessonapp.components.CustomSpacer
+import com.dreamcoder.questionlessonapp.components.CustomText
+import com.dreamcoder.questionlessonapp.components.QuizScreenSecondToolbar
+import com.dreamcoder.questionlessonapp.components.QuizScreenTopToolbar
 
 @SuppressLint("SuspiciousIndentation")
 @Composable

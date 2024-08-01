@@ -1,4 +1,4 @@
-package com.dreamcoder.questionlessonapp.navigation
+package com.dreamcoder.questionlessonapp.util
 
 sealed class Routes(val route:String) {
     object QuestionScreen : Routes("QuestionScreen")

@@ -1,4 +1,4 @@
-package com.dreamcoder.questionlessonapp.ui.theme.components
+package com.dreamcoder.questionlessonapp.components
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
