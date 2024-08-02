@@ -1,6 +1,6 @@
 package com.dreamcoder.questionlessonapp.navigation
 
-import com.dreamcoder.questionlessonapp.mvvm.viewModel.QuestionViewModel
+import com.dreamcoder.questionlessonapp.viewModel.QuestionViewModel
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable

@@ -2,7 +2,7 @@
 
 package com.dreamcoder.questionlessonapp.screen
 
-import com.dreamcoder.questionlessonapp.mvvm.viewModel.QuestionViewModel
+import com.dreamcoder.questionlessonapp.viewModel.QuestionViewModel
 import android.annotation.SuppressLint
 import android.widget.Toast
 import androidx.compose.foundation.background

@@ -1,8 +1,8 @@
 package com.dreamcoder.questionlessonapp.activity
 
-import com.dreamcoder.questionlessonapp.mvvm.Repository.QuestionRepository
-import com.dreamcoder.questionlessonapp.mvvm.viewModel.QuestionViewModel
-import com.dreamcoder.questionlessonapp.mvvm.ViewModelFactory.QuizViewModelFactory
+import com.dreamcoder.questionlessonapp.Repository.QuestionRepository
+import com.dreamcoder.questionlessonapp.viewModel.QuestionViewModel
+import com.dreamcoder.questionlessonapp.ViewModelFactory.QuizViewModelFactory
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent

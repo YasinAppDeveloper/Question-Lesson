@@ -1,10 +1,10 @@
-package com.dreamcoder.questionlessonapp.mvvm.ViewModelFactory
+package com.dreamcoder.questionlessonapp.ViewModelFactory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
-import com.dreamcoder.questionlessonapp.mvvm.Repository.QuestionRepository
-import com.dreamcoder.questionlessonapp.mvvm.viewModel.QuestionViewModel
+import com.dreamcoder.questionlessonapp.Repository.QuestionRepository
+import com.dreamcoder.questionlessonapp.viewModel.QuestionViewModel
 
 class QuizViewModelFactory(private val repository: QuestionRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {

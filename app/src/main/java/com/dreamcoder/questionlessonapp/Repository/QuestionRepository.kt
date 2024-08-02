@@ -1,4 +1,4 @@
-package com.dreamcoder.questionlessonapp.mvvm.Repository
+package com.dreamcoder.questionlessonapp.Repository
 
 import com.dreamcoder.questionlessonapp.model.QuestionModel
 import com.google.firebase.firestore.FirebaseFirestore
