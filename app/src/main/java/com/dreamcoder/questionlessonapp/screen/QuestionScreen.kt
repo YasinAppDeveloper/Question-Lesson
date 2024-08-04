@@ -2,9 +2,7 @@
 
 package com.dreamcoder.questionlessonapp.screen
 
-import com.dreamcoder.questionlessonapp.viewModel.QuestionViewModel
 import android.annotation.SuppressLint
-import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Box
@@ -39,12 +37,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.dreamcoder.questionlessonapp.model.QuestionModel
-import com.dreamcoder.questionlessonapp.util.Routes
 import com.dreamcoder.questionlessonapp.components.CustomSpacer
 import com.dreamcoder.questionlessonapp.components.CustomText
 import com.dreamcoder.questionlessonapp.components.QuizScreenSecondToolbar
 import com.dreamcoder.questionlessonapp.components.QuizScreenTopToolbar
+import com.dreamcoder.questionlessonapp.model.QuestionModel
+import com.dreamcoder.questionlessonapp.util.Routes
+import com.dreamcoder.questionlessonapp.viewModel.QuestionViewModel
 
 @SuppressLint("SuspiciousIndentation")
 @Composable
@@ -54,7 +53,6 @@ fun QuestionScreen(
 
     val questions by viewModel.questions.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
-    val context = LocalContext.current
     var number = 0
 
     Box(
@@ -96,15 +94,12 @@ fun QuestionScreen(
 
             FloatingActionButton(
                 onClick = {
-                    if (viewModel.allQuestionsAnswered()) {
-                        navController.currentBackStackEntry?.savedStateHandle?.set(
-                            "questions",
-                            questions
-                        )
-                        navController.navigate(Routes.ResultScreen.route)
-                    } else {
-                        Toast.makeText(context, "Fill the all option", Toast.LENGTH_SHORT).show()
-                    }
+                    navController.currentBackStackEntry?.savedStateHandle?.set(
+                        "questions",
+                        questions
+                    )
+                    navController.navigate(Routes.ResultScreen.route)
+
                 },
                 modifier = Modifier
                     .align(Alignment.BottomEnd)
@@ -150,7 +145,7 @@ fun QuestionItem(
                 ) {
                     RadioButton(
                         selected = question.selectedOption == option,
-                        onClick = { onOptionSelected(option) }
+                        onClick = { onOptionSelected(option) },
                     )
                     Text(text = option, fontSize = 13.sp)
                 }

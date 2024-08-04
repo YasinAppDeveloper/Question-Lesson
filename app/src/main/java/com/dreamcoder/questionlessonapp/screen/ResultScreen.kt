@@ -26,9 +26,10 @@ import com.dreamcoder.questionlessonapp.components.CustomSpacer
 import com.dreamcoder.questionlessonapp.components.CustomText
 import com.dreamcoder.questionlessonapp.components.ResultScreenSecondToolbar
 import com.dreamcoder.questionlessonapp.components.ResultScreenToolbar
+import com.dreamcoder.questionlessonapp.viewModel.QuestionViewModel
 
 @Composable
-fun ResultScreen(navController: NavController) {
+fun ResultScreen(navController: NavController, viewModel: QuestionViewModel,) {
     val questions =
         navController.previousBackStackEntry?.savedStateHandle?.get<List<QuestionModel>>("questions")
 
@@ -44,6 +45,7 @@ fun ResultScreen(navController: NavController) {
                     navController.navigate(Routes.QuestionScreen.route){
                         popUpTo(navController.graph.id)
                         launchSingleTop = true
+                        viewModel.resQuestion()
                     }
                 }
                 CustomSpacer(dp = 1.dp, modifier = Modifier.background(color = Color.Black))

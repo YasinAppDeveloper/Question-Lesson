@@ -49,7 +49,8 @@ class QuestionViewModel(private val repository: QuestionRepository) : ViewModel(
         }
     }
 
-    fun allQuestionsAnswered(): Boolean {
-        return _questions.value.all { it.selectedOption != null }
+    fun resQuestion(){
+        _questions.value = emptyList()
+        loadQuestions()
     }
 }

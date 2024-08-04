@@ -18,7 +18,7 @@ fun Navigation(quizViewModel: QuestionViewModel) {
             QuestionScreen(quizViewModel, navController)
         }
         composable(Routes.ResultScreen.route) {
-            ResultScreen(navController)
+            ResultScreen(navController,quizViewModel)
         }
     }
 }
