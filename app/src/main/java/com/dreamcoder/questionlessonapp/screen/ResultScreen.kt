@@ -43,7 +43,7 @@ fun ResultScreen(
             .fillMaxSize()
             .background(color = Color.White)
     ) {
-        LazyColumn {
+        LazyColumn {   
             item {
                 ResultTopBar {
                     navController.navigate(Routes.QuestionScreen.route) {
