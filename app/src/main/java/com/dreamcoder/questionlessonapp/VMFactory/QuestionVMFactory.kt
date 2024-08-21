@@ -1,12 +1,12 @@
-package com.dreamcoder.questionlessonapp.ViewModelFactory
+package com.dreamcoder.questionlessonapp.VMFactory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
-import com.dreamcoder.questionlessonapp.Repository.QuestionRepository
+import com.dreamcoder.questionlessonapp.Repository.QuestionRepo
 import com.dreamcoder.questionlessonapp.viewModel.QuestionViewModel
 
-class QuizViewModelFactory(private val repository: QuestionRepository) : ViewModelProvider.Factory {
+class QuestionVMFactory(private val repository: QuestionRepo) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {
         if (modelClass.isAssignableFrom(QuestionViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")

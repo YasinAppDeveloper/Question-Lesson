@@ -1,6 +1,6 @@
 package com.dreamcoder.questionlessonapp.viewModel
 
-import com.dreamcoder.questionlessonapp.Repository.QuestionRepository
+import com.dreamcoder.questionlessonapp.Repository.QuestionRepo
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dreamcoder.questionlessonapp.model.QuestionModel
@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class QuestionViewModel(private val repository: QuestionRepository) : ViewModel() {
+class QuestionViewModel(private val repository: QuestionRepo) : ViewModel() {
 
     private val _questions = MutableStateFlow<List<QuestionModel>>(emptyList())
     val questions: StateFlow<List<QuestionModel>> = _questions

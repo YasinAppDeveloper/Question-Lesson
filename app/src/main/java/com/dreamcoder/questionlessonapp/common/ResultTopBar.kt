@@ -1,6 +1,9 @@
-package com.dreamcoder.questionlessonapp.components
+@file:Suppress("UnusedImport")
+
+package com.dreamcoder.questionlessonapp.common
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -19,7 +22,7 @@ import androidx.compose.ui.unit.sp
 import com.dreamcoder.questionlessonapp.R
 
 @Composable
-fun QuizScreenTopToolbar() {
+fun ResultTopBar(onBackClick: () -> Unit) {
     Row(
         modifier = Modifier
             .height(56.dp)
@@ -29,9 +32,9 @@ fun QuizScreenTopToolbar() {
         verticalAlignment = Alignment.CenterVertically
     ) {
         Row {
-            CustomIcon(
+           Icon(
                 icon = R.drawable.back_arrow,
-                modifier = Modifier
+                modifier = Modifier.clickable { onBackClick() }
                     .padding(start = 10.dp, top = 2.dp)
                     .size(20.dp)
             )
@@ -46,7 +49,7 @@ fun QuizScreenTopToolbar() {
         }
 
         CustomText(
-            title = stringResource(id = R.string.start_lesson),
+            title = stringResource(id = R.string.lesson_detail),
             fontFamily = FontFamily.SansSerif,
             fontSize = 18.sp,
             color = Color.Black,
@@ -55,10 +58,7 @@ fun QuizScreenTopToolbar() {
         )
 
         Row {
-            CustomBorderText(
-                title = stringResource(id = R.string.finish),
-                modifier = Modifier.padding(end = 5.dp)
-            )
+
             CustomBorderText(
                 title = stringResource(id = R.string.share),
                 modifier = Modifier.padding(end = 10.dp)

@@ -1,4 +1,5 @@
-package com.dreamcoder.questionlessonapp.components
+package com.dreamcoder.questionlessonapp.common
+
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
