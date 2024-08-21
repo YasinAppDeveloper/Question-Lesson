@@ -31,17 +31,18 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.dreamcoder.questionlessonapp.common.CustomSpacer
-import com.dreamcoder.questionlessonapp.common.CustomText
-import com.dreamcoder.questionlessonapp.common.MainTopBar
-import com.dreamcoder.questionlessonapp.common.UserInfoBox
+import com.dreamcoder.questionlessonapp.components.CustomSpacer
+import com.dreamcoder.questionlessonapp.components.CustomText
+import com.dreamcoder.questionlessonapp.components.QuizScreenSecondToolbar
+import com.dreamcoder.questionlessonapp.components.QuizScreenTopToolbar
 import com.dreamcoder.questionlessonapp.model.QuestionModel
-import com.dreamcoder.questionlessonapp.navigation.Routes
+import com.dreamcoder.questionlessonapp.util.Routes
 import com.dreamcoder.questionlessonapp.viewModel.QuestionViewModel
 
 @SuppressLint("SuspiciousIndentation")
@@ -52,7 +53,7 @@ fun QuestionScreen(
 
     val questions by viewModel.questions.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
-    var count = 0
+    var number = 0
 
     Box(
         modifier = Modifier
@@ -70,16 +71,16 @@ fun QuestionScreen(
             LazyColumn {
 
                 item {
-                    MainTopBar()
+                    QuizScreenTopToolbar()
                     CustomSpacer(dp = 1.dp, modifier = Modifier.background(color = Color.Black))
-                    UserInfoBox()
+                    QuizScreenSecondToolbar()
                     CustomSpacer(dp = 1.dp, modifier = Modifier.background(color = Color.Black))
                 }
 
                 itemsIndexed(questions) { index, question ->
-                    count = index + 1
+                    number = index + 1
                     QuestionItem(
-                        count,
+                        number,
                         question,
                         onOptionSelected = { option ->
                             viewModel.selectOption(question.id, option)

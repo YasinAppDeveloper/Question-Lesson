@@ -4,7 +4,7 @@ import com.dreamcoder.questionlessonapp.model.QuestionModel
 import com.google.firebase.firestore.FirebaseFirestore
 
 
-class QuestionRepo(
+class QuestionRepository (
     private val firestore: FirebaseFirestore
 ) {
     fun getAllQuestions(onComplete: (List<QuestionModel>) -> Unit) {

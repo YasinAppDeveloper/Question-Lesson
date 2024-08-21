@@ -1,4 +1,4 @@
-package com.dreamcoder.questionlessonapp.common
+package com.dreamcoder.questionlessonapp.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -21,7 +21,7 @@ import com.dreamcoder.questionlessonapp.R
 
 @Composable
 @Preview
-fun UserInfoBoxR(
+fun QuizScreenSecondToolbar(
 ) {
     Column(
         modifier = Modifier
@@ -30,9 +30,9 @@ fun UserInfoBoxR(
     ) {
 
         CustomText(
-            title = stringResource(id = R.string.user_full_name),
+            title = stringResource(id = R.string.user_name),
             fontFamily = FontFamily.SansSerif,
-            fontSize = 19.sp,
+            fontSize = 20.sp,
             color = Color.Black,
             fontWeight = FontWeight.SemiBold,
             modifier = Modifier
@@ -40,31 +40,14 @@ fun UserInfoBoxR(
 
         CustomSpacer(dp = 5.dp, modifier = Modifier)
 
-
-        Row(
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.fillMaxWidth()
-        ) {
-
-            CustomText(
-                title = stringResource(id = R.string.lesson_one),
-                fontFamily = FontFamily.SansSerif,
-                fontSize = 18.sp,
-                color = Color.Black,
-                fontWeight = FontWeight.Normal,
-                modifier = Modifier
-            )
-
-            CustomText(
-                title = stringResource(id = R.string.time),
-                fontFamily = FontFamily.SansSerif,
-                fontSize = 14.sp,
-                color = Color.Black,
-                fontWeight = FontWeight.Normal,
-                modifier = Modifier
-            )
-        }
+        CustomText(
+            title = stringResource(id = R.string.lesson_main),
+            fontFamily = FontFamily.SansSerif,
+            fontSize = 18.sp,
+            color = Color.Black,
+            fontWeight = FontWeight.Normal,
+            modifier = Modifier
+        )
 
         CustomSpacer(dp = 10.dp, modifier = Modifier)
 
@@ -84,7 +67,7 @@ fun UserInfoBoxR(
             )
 
             CustomBorderText(
-                title = stringResource(id = R.string.edit_lesson),
+                title = stringResource(id = R.string.start_lesson),
                 modifier = Modifier
             )
         }

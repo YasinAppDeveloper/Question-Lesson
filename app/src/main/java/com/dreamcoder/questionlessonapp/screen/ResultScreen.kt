@@ -19,21 +19,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.dreamcoder.questionlessonapp.common.CustomBorderText
-import com.dreamcoder.questionlessonapp.common.CustomSpacer
-import com.dreamcoder.questionlessonapp.common.CustomText
-import com.dreamcoder.questionlessonapp.common.ResultTopBar
-import com.dreamcoder.questionlessonapp.common.UserInfoBoxR
 import com.dreamcoder.questionlessonapp.model.QuestionModel
-import com.dreamcoder.questionlessonapp.navigation.Routes
+import com.dreamcoder.questionlessonapp.util.Routes
+import com.dreamcoder.questionlessonapp.components.CustomBorderText
+import com.dreamcoder.questionlessonapp.components.CustomSpacer
+import com.dreamcoder.questionlessonapp.components.CustomText
+import com.dreamcoder.questionlessonapp.components.ResultScreenSecondToolbar
+import com.dreamcoder.questionlessonapp.components.ResultScreenToolbar
 import com.dreamcoder.questionlessonapp.viewModel.QuestionViewModel
 
 @Composable
-fun ResultScreen(
-    navController: NavController,
-    viewModel: QuestionViewModel
-) {
-
+fun ResultScreen(navController: NavController, viewModel: QuestionViewModel,) {
     val questions =
         navController.previousBackStackEntry?.savedStateHandle?.get<List<QuestionModel>>("questions")
 
@@ -43,17 +39,17 @@ fun ResultScreen(
             .fillMaxSize()
             .background(color = Color.White)
     ) {
-        LazyColumn {   
+        LazyColumn {
             item {
-                ResultTopBar {
-                    navController.navigate(Routes.QuestionScreen.route) {
+                ResultScreenToolbar {
+                    navController.navigate(Routes.QuestionScreen.route){
                         popUpTo(navController.graph.id)
                         launchSingleTop = true
                         viewModel.resQuestion()
                     }
                 }
                 CustomSpacer(dp = 1.dp, modifier = Modifier.background(color = Color.Black))
-                UserInfoBoxR()
+                ResultScreenSecondToolbar()
                 CustomSpacer(dp = 1.dp, modifier = Modifier.background(color = Color.Black))
             }
             if (questions != null) {
@@ -92,9 +88,7 @@ fun ResultItem(question: QuestionModel) {
                 )
             }
         }
-
         CustomSpacer(dp = 5.dp, modifier = Modifier)
-
         if (question.userComment!!.isNotEmpty()) {
             CustomBorderText(
                 title = question.userComment,
