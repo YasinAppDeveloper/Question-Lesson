@@ -1,4 +1,4 @@
-package com.dreamcoder.questionlessonapp.components
+package com.dreamcoder.questionlessonapp.common
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable

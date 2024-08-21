@@ -7,10 +7,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.dreamcoder.questionlessonapp.screen.QuestionScreen
 import com.dreamcoder.questionlessonapp.screen.ResultScreen
-import com.dreamcoder.questionlessonapp.util.Routes
 
 @Composable
-fun Navigation(quizViewModel: QuestionViewModel) {
+fun NavGraph(quizViewModel: QuestionViewModel) {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = Routes.QuestionScreen.route) {
@@ -18,7 +17,7 @@ fun Navigation(quizViewModel: QuestionViewModel) {
             QuestionScreen(quizViewModel, navController)
         }
         composable(Routes.ResultScreen.route) {
-            ResultScreen(navController,quizViewModel)
+            ResultScreen(navController, quizViewModel)
         }
     }
 }
